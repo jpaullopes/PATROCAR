@@ -27,39 +27,61 @@ export function getPositiveInteger(text){
     return number
 }
 
-export function insertionSort(array, atributo, reverse = false) {
-    // Loop de ordenação
-    for (let i = 1; i < array.length; i++) {
-        let key = array[i];
-        let j = i - 1;
-
-        // Comparação com base no atributo especificado
-        while (j >= 0 && key[atributo] < array[j][atributo]) {
-            array[j + 1] = array[j];
-            j--;
+export function bubbleSort(lista, atributo, reverse = false) {
+    let listaCopia = lista.slice()
+    let n = listaCopia.length
+    for(let i = 0;i < n - 1;i++){
+        for(let j = 0; j < n - i - 1;j++){
+            if(reverse ? (listaCopia[j][atributo] < listaCopia[j + 1][atributo]) : (listaCopia[j][atributo] > listaCopia[j + 1][atributo])){
+                let temporario = listaCopia[j]
+                listaCopia[j] = listaCopia[j + 1]
+                listaCopia[j + 1] = temporario
+            }
         }
-        array[j + 1] = key;
     }
-    
-    return array;
+    return listaCopia
 }
 
 
-
-function invertorLista(lista){
-    const listaTemporaria = []
-    for(let i = lista.length - 1;i >= 0;i--){
-        listaTemporaria.push(lista[i])
-    }
-    return listaTemporaria
-}
-
-export function myFilter(func,array){
+export function myFilter(func, array) {
     const tempList = []
-    for(let i = 0;i < array.length;i++){
-        if(func(array[i])){
+    for (let i = 0; i < array.length; i++) {
+        if (func(array[i])) {
             tempList.push(array[i])
         }
     }
     return tempList
+}
+
+export function meUpperCase(texto) {
+    let novaPalavra = '' 
+    for(let i = 0; i < texto.length; i++) {
+        let valorCaractere = texto.charCodeAt(i)   
+        if(valorCaractere >= 97 && valorCaractere <= 122) {
+            novaPalavra += String.fromCharCode(valorCaractere - 32)
+        }else {
+            novaPalavra += texto[i]
+        }
+    }   
+    return novaPalavra
+}
+
+function meuLowerCase(texto) {
+    let novaPalavra = ''
+    for(let i = 0; i < texto.length; i++) {
+        let valorCaractere = texto.charCodeAt(i)
+        if(valorCaractere >= 65 && valorCaractere <= 90) {
+            novaPalavra += String.fromCharCode(valorCaractere + 32)
+        }else {
+            novaPalavra += texto[i]
+        }
+    }
+    return novaPalavra
+}
+
+export function meuCapitalize(texto) {
+    let primeiraLetra = meUpperCase(texto[0])
+    let restoTexto = meuLowerCase(texto.slice(1))
+    
+    return primeiraLetra + restoTexto
 }
