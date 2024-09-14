@@ -1,1 +1,1 @@
-"referentes … atividade patrocar do professor rog‚rio silva" 
+"referentes … atividade patrocar do professor rog‚rio silva, sinceramente professor, eu nÆo consegui ter muito tempo pra fazer ela e vou ter que deixar inclompleta at‚, s¢ deu pra fazer a versÆo 1. As outras diciplinas conseguiram sugar todo o tempo que eu tinha e os trabalhos e provas nÆo param de aparecer" 
